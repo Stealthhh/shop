@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<a href="{% url 'main' %}">To main page</a>
+<div>
+    <form method="post" action="{% url 'add-product' %}">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Add">
+    </form>
+
+</div>
+{% endblock %}
